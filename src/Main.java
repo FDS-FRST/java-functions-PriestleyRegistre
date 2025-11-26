@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -61,7 +62,18 @@ public class Main {
      */
     public static String grade(int score) {
 
-        return score >= 90 ? score + "A" : score + "B";
+        if (score >= 90) {
+            return "A";
+        } else if (score >= 80) {
+            return "B";
+        } else if (score >= 70) {
+            return "C";
+        } else if (score >= 60) {
+            return "D";
+        } else {
+            return "F";
+        }
+
     }
 
     /**
@@ -94,10 +106,12 @@ public class Main {
      * @return
      */
     public static double applyDiscount(double price, double discount) {
-        return price * discount / 100;
+        return price - (price * discount / 100);
+
     }
 
 
+    /**
     /**
      * Find even numbers from a list.
      *
@@ -105,7 +119,15 @@ public class Main {
      * @return
      */
     public static List<Integer> filterEvenNumbers(List<Integer> numbers) {
-        return list<Integer>;
+        List<Integer> result = new ArrayList<>();
+        for (Integer n : numbers) {
+            if (n % 2 == 0) {
+                result.add(n);
+            }
+        }
+        return result;
+
+
     }
 
     /**
@@ -127,7 +149,10 @@ public class Main {
      */
     public static int fibonacci(int n) {
 
-        return fibonacci(n-1)+fibonacci(n-2);
+        if (n <= 0) return 0;
+        if (n == 1) return 1;
+        return fibonacci(n - 1) + fibonacci(n - 2);
+
     }
 
 
